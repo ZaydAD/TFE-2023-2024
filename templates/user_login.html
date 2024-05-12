@@ -1,0 +1,36 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChouFni - Login</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/user_login.css' %}">
+    <link href="https://fonts.google.com/share?selection.family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900" rel="stylesheet">
+</head>
+<body>
+    {% block content %}
+    <div class="loginFormContainer">
+        <div class="loginForm">
+           
+                <h1>ChouFni</h1>
+        
+            <p>Welcome back! Please login.</p>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <input type="text" name="Username" placeholder="Enter Username">
+                <input type="password" name="Password" placeholder="Enter Password">
+                <a href="{% url 'update_profile' %}">
+                <button>Login</button>
+                </a>
+            </form>
+            <span><a href="#">Forgot password?</a></span> <!--not yet configured-->
+
+                <p>Don't have an account?</p>
+                <a href="{% url 'register' %}">Register here</a>.
+
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

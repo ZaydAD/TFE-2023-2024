@@ -1,0 +1,46 @@
+
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ChouFni</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/register.css' %}">
+        <link rel="stylesheet" href="https://fonts.google.com/share?selection.family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900">
+    </head>
+
+{% block content %}
+
+<div class="registerFormContaier">
+
+    <div class="registerForm">
+
+            <h1>Choufni</h1>
+
+        <p>Sign up to get started.</p>
+        <form action="{% url 'register' %}" method='POST'>
+            {% csrf_token %}
+
+            {% for field in form %}
+            {% if field.errors %}
+            {{field}}
+            <small>{{field.errors}}</small>
+            {% else %}
+            {{field}}
+            <small>       </small>
+            {% endif %}
+
+            {% endfor %}
+
+
+            <button>Register</button>
+                <p>Already have an account.</p>
+                <a href="{% url 'user_login' %}">Login</a>
+
+        </form>
+    </div>
+
+ 
+</div>
+{% endblock content %}

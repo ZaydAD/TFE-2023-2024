@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChouFni</title>
+    {% load static %}
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+
+  {% block content %}
+  <div class="page-container">
+    <div class="content-container">
+        <div class="header">
+            <a href="{% url 'update_profile'%}">
+                {% if user.picture %} <!--user profile picture as a source-->
+                    <img class="profilepic" src="{{ user.picture.url }}" alt="Profile picture">
+                {% else %}
+                    <img class="profilepic" src="{% static 'img/default_pfp.jpg' %}" alt="Default profile picture">
+                {% endif %}
+            </a>
+            
+            <div class="profile-name">@{{ request.user.username }}</div>
+
+            <a href="{% url 'logout' %}">
+            <div class="logout">
+              <button>
+                <img src="{% static 'img/logout.png' %}" alt="Logout">
+              </button>
+            </div>
+            </a>
+
+        </div>
+
+
+            <div class="friends-list">
+                {% for friend in friends %}
+                <a href="{% url 'chat' friend.profile.id %}" style="color: black">
+                    <div class="friend"><img class="image" src="{{ friend.profile.picture.url }}" alt="Profile picture">
+                    <h5> {{ friend.profile.name }} </h5>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+
+
+        <div class="footer">
+            <div class="footer-item">
+              <button>
+                <img src="{% static 'img/notification.png' %}" alt="notification">
+              </button>
+            </div>
+            <div class="footer-item">
+              <button>
+                <img src="{% static 'img/friendlist.png' %}" alt="friendlist">
+              </button>
+            </div>
+            <div class="footer-item">
+              <button>
+                <img src="{% static 'img/addfriend.png' %}" alt="addfriend">
+              </button>
+            </div>
+            <div class="footer-item">
+              <button>
+                <img src="{% static 'img/search.png' %}" alt="search">
+              </button>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}
+</div>
+</body>
+</html>
