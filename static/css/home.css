@@ -1,0 +1,117 @@
+body, html
+{
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: black;
+}
+
+.page-container
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: scroll;
+}
+
+.content-container
+{
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 2px solid #ccc;
+}
+
+.profilepic
+{
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.profile-name
+{
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 50px;
+}
+
+.logout img
+{
+  width: 32px;
+  height: 32px;
+}
+
+.friends-list
+{
+  flex: 1;
+  padding: 100px;
+}
+.friends-list img
+{
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 10%;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.friend
+{
+  background-color: #ffffff;
+  box-shadow: rgba(143, 143, 147, 0.25) 0px 30px 60px -12px, rgba(119, 115, 115, 0.3) 0px 18px 36px -18px;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+
+.footer
+{
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  border-top: 2px solid #ccc;
+}
+
+.footer img
+{
+  width: 32px;
+  height: 32px;
+
+}
+
+button
+{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+
+button img
+{
+  width: 30px;
+  height: 30px;
+}
+
+
+button:hover
+{
+  opacity: 0.8;
+  color: antiquewhite;
+}
+
+
+
